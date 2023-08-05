@@ -25,6 +25,9 @@ public class Interface {
         ferrari.frear();
         System.out.println("Carro Ferrari Freiando: " + ferrari);
 
+        ferrari.frear();
+        System.out.println("Carro Ferrari Freiando: " + ferrari);
+
 //        civic.acelerar();
 //        System.out.println("Carro CIVIC: " + civic);
 //
