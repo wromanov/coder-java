@@ -1,6 +1,9 @@
 package oo.polimorfismo;
 
-public class Comida {
+public abstract class Comida {
+
+    /* Classe abstrata não pode ser estanciada, serve apenas para uso de herança. */
+
     double peso;
 
     public Comida(double peso) {
