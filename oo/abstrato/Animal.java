@@ -18,4 +18,7 @@ public abstract class Animal {
 
     public abstract String mover(); //Método abstrato não tem corpo.
 
+    /* Classe abstrata não pode ser estanciada, serve apenas para uso de herança. */
+
+
 }
