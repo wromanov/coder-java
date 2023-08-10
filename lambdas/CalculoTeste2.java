@@ -21,6 +21,12 @@ public class CalculoTeste2 {
 
         Calculo cal02 = (x, y) -> { double resultado; resultado =  x - y; return resultado;};
         System.out.println(cal02.executar(2,3));
+
+        System.out.println(cal02.legal());
+
+        System.out.println(Calculo.muitoLegal());
+
+
     }
 
 

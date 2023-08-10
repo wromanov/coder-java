@@ -9,6 +9,19 @@ public interface Calculo {
 //A partir das interfaces funcionais que serão criadas as funções do tipo lambdas (funções anonimas usadas dentro do código)
 //https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
 
+/*Apesar de ser uma interface e permitir apenas um método abstrato ainda podemos utilizar
+  "métodos defaults" e "métodos estáticos" dentro da interface, pois entende que só existe apenas
+  um método abstrato dentro da interface sem implementação.*/
+
+//Método default
+default String legal() {
+    return "Legal";
+}
+
+//Método estático
+static String muitoLegal(){
+    return "Muito legal";
+}
 
 
 
