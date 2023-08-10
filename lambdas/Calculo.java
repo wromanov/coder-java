@@ -13,16 +13,15 @@ public interface Calculo {
   "métodos defaults" e "métodos estáticos" dentro da interface, pois entende que só existe apenas
   um método abstrato dentro da interface sem implementação.*/
 
-//Método default
-default String legal() {
-    return "Legal";
-}
+    //Método default
+    default String legal() {
+        return "Legal";
+    }
 
-//Método estático
-static String muitoLegal(){
-    return "Muito legal";
-}
-
+    //Método estático
+    static String muitoLegal() {
+        return "Muito legal";
+    }
 
 
 }
