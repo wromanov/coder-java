@@ -12,6 +12,8 @@ public class Funcao {
          * logo em seguida temos a variável "parOuImpar" que vai receber a expressão lambda, em seguida temos o parâmetro "número" do tipo integer,
          * em seguida uma expressão ternária, para verificar se o número é par ou impar. */
 
+        //Obs quanto maior a função, mais difícil será para reutilizar essa função em mais locais dentro do sistema.
+
         Function<Integer, String> parOuImpar = numero -> numero % 2 == 0 ? "Par": "Ímpar";
 
         Function<String, String> oResultadoE = valor -> "O resultado é: " + valor;
