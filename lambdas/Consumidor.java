@@ -23,7 +23,7 @@ public class Consumidor {
         imprimirNome.accept(p1);
         produtos.forEach(imprimirNome);
         produtos.forEach(p -> System.out.println(p.preco));
-        produtos.forEach(System.out::println); // pesquisar sobre Method Reference
+        produtos.forEach(System.out::println); // pesquisar sobre Method Reference.
 
     }
 
