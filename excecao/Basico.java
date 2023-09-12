@@ -12,7 +12,7 @@ public class Basico {
         /* Um bloco "try" é um bloco que contem um código que pode gerar erro,
          * A partir do momento que esse código pode gerar erro, podemos tratá-lo
          * A partir de um "catch", tratando o erro no "catch" temos a possibilidade
-         * de mostrar uma mensagem, gerar um outro erro, silenciar um erro
+         * de mostrar uma mensagem, gerar um outro erro ou silenciar um erro
          */
 
         //Tratando erro de forma genérica com Exception
