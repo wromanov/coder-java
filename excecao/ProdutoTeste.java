@@ -7,7 +7,7 @@ public class ProdutoTeste {
          * Não receber um nome Null
          * Não receber quantidade menor ou igual 0
          */
-        Produto p1 = new Produto("Caneta", 50);
+        Produto p1 = new Produto("Caneta", 1);
 
         p1.adicionarEstoque(10);
         p1.ativar();
