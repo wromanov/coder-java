@@ -21,11 +21,12 @@ public class Reduce1 {
         Integer total2 = nums.stream().reduce(1, soma);
         System.out.println("Teste2: " + total2);
 
-        //Soma todos os elementos da lista, passando o acumulador como parâmetro para cada um dos elementos (forma paralela, e somando com o próximo consecutivamente.
+        //Soma todos os elementos da lista, passando o acumulador como parâmetro para cada um dos elementos (forma paralela, e somando com o próximo consecutivamente).
         Integer total3 = nums.parallelStream().reduce(1, soma);
         System.out.println("Teste3: " + total3);
 
         //Composição filter + reduce
+        //ifPresent verifica se há algum resultado no stream reduce, caso sim, ele executa uma função.
         nums.stream().filter(n -> n >= 2).reduce(soma).ifPresent(System.out::println);
 
 
