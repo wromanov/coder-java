@@ -8,9 +8,9 @@ public class Produto {
     private int quantidadeEstoque;
     private boolean ativo;
 
-    public Produto(String nome, int quantidadeEstoque) {
+    public Produto(String nome) {
         setNome(nome);
-        adicionarEstoque(quantidadeEstoque);
+        //adicionarEstoque(quantidadeEstoque);
     }
 
     public void ativar(){
