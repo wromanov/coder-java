@@ -53,7 +53,7 @@ public class ProdutoTeste {
                 break;
 
             } catch (IllegalArgumentException iae) {
-                //Imprime no console o rastro da pilha, muito usado quando está desenvolvendo.
+                //Imprime no console o rastro da pilha de erro, muito usado quando está desenvolvendo.
                 iae.printStackTrace();
                 System.out.println("Erro na compra: " + iae.getMessage());
 
