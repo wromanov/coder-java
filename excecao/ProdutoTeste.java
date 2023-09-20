@@ -21,7 +21,7 @@ public class ProdutoTeste {
          * Não retirar quantidades maiores do que existe no estoque.
          * Assim interrompendo a execução desse método, para não deixar a instrução ser executada */
 
-        //p1.retirarEstoque(30);
+        p1.retirarEstoque(30);
 
         System.out.println(p1);
         System.out.println();
@@ -56,6 +56,9 @@ public class ProdutoTeste {
                 //Imprime no console o rastro da pilha de erro, muito usado quando está desenvolvendo.
                 iae.printStackTrace();
                 System.out.println("Erro na compra: " + iae.getMessage());
+
+                //Relançando exceção para próximo frame.
+                //throw iae;
 
             } catch (IllegalStateException ise) {
                 System.out.println("Produto não ativado: " + ise.getMessage());
