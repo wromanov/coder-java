@@ -61,11 +61,15 @@ public class Produto {
         }
 
         if (isInativo()) {
-            throw new IllegalStateException("Não pode realizar retirada de um produto inativo do estoque.");
+            //Exceção personalizada
+            throw new ProdutoInativoException("Não pode realizar retirada de um produto inativo no estoque.");
+
+            //throw new IllegalStateException("Não pode realizar retirada de um produto inativo do estoque.");
         }
 
         if (this.quantidadeEstoque - quantidade < 0) {
-            throw new IllegalArgumentException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
+            throw new ProdutoSemEstoqueException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
+            //throw new IllegalArgumentException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
         }
 
         this.quantidadeEstoque -= quantidade;

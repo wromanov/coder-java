@@ -13,7 +13,7 @@ public class ProdutoTeste {
 
         Produto p1 = new Produto("Caneta");
         //p1.ativar();
-        p1.adicionarEstoque(11);
+        p1.adicionarEstoque(50);
 
         /* Proteger o método com um lançamento de exceção para:
          * Não receber valores negativos.
@@ -21,7 +21,7 @@ public class ProdutoTeste {
          * Não retirar quantidades maiores do que existe no estoque.
          * Assim interrompendo a execução desse método, para não deixar a instrução ser executada */
 
-        p1.retirarEstoque(30);
+        //p1.retirarEstoque(30);
 
         System.out.println(p1);
         System.out.println();
@@ -60,7 +60,15 @@ public class ProdutoTeste {
                 //Relançando exceção para próximo frame.
                 //throw iae;
 
-            } catch (IllegalStateException ise) {
+            } catch (ProdutoSemEstoqueException pse) {
+                //Imprime no console o rastro da pilha de erro, muito usado quando está desenvolvendo.
+                //pse.printStackTrace();
+                System.out.println("Erro na compra: " + pse.getMessage());
+
+                //Relançando exceção para próximo frame.
+                //throw iae;
+
+            } catch (ProdutoInativoException ise) {
                 System.out.println("Produto não ativado: " + ise.getMessage());
                 System.out.print("Deseja ativar o produto? ");
                 String opcao = sc.next();
