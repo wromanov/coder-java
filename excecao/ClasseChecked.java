@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ClasseUnchecked {
+public class ClasseChecked {
     public static void main(String[] args) {
+
+        //Exceções do Tipo Checked precisam ser tratadas, para que o programa execute.
 
         //Criando Caminho para o Arquivo
         Path arquivo = Path.of("C:\\Users\\walacedelgado\\Desktop\\teste.txt");

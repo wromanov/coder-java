@@ -68,7 +68,7 @@ public class Produto {
         }
 
         if (this.quantidadeEstoque - quantidade < 0) {
-            throw new ProdutoSemEstoqueException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
+            throw new ProdutoSemEstoqueException("Estoque Insuficiente", this.quantidadeEstoque, quantidade);
             //throw new IllegalArgumentException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
         }
 
