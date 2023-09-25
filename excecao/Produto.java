@@ -48,7 +48,9 @@ public class Produto {
 
     //Proteger o método com um lançamento de exceção para não receber valores negativos.
     //Assim interrompendo a execução desse método, para não deixar a instrução ser executada.
-    public void retirarEstoque(int quantidade) {
+
+    //Usar o Throws após o método para lançar a exceção para ser tratada pelo próximo método chamador.
+    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException {
         if (quantidade < 0) {
             //Lançando Exceção
             throw new IllegalArgumentException("Quantidade não pode ser negativa para retirada no estoque.");
@@ -64,12 +66,11 @@ public class Produto {
             //Exceção personalizada
             throw new ProdutoInativoException("Não pode realizar retirada de um produto inativo no estoque.");
 
-            //throw new IllegalStateException("Não pode realizar retirada de um produto inativo do estoque.");
         }
 
         if (this.quantidadeEstoque - quantidade < 0) {
             throw new ProdutoSemEstoqueException("Estoque Insuficiente", this.quantidadeEstoque, quantidade);
-            //throw new IllegalArgumentException("Quantidade a retirar do estoque, não pode ser maior que o volume contido no estoque.");
+
         }
 
         this.quantidadeEstoque -= quantidade;
