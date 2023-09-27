@@ -50,7 +50,7 @@ public class Produto {
     //Assim interrompendo a execução desse método, para não deixar a instrução ser executada.
 
     //Usar o Throws após o método para lançar a exceção para ser tratada pelo próximo método chamador.
-    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException {
+    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException {
         if (quantidade < 0) {
             //Lançando Exceção
             throw new IllegalArgumentException("Quantidade não pode ser negativa para retirada no estoque.");
@@ -83,8 +83,7 @@ public class Produto {
 
     public String toString() {
         return "Nome: " + getNome()
-                + "\nEstoque: "
-                + getQuantidadeEstoque()
+                + "\nEstoque: " + getQuantidadeEstoque()
                 + "\nStatus do Produto: " + isAtivo();
     }
 

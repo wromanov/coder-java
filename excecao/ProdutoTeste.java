@@ -10,9 +10,8 @@ public class ProdutoTeste {
          * Não receber quantidade menor ou igual 0
          */
 
-
         Produto p1 = new Produto("Caneta");
-        p1.ativar();
+        // p1.ativar();
         p1.adicionarEstoque(50);
 
         /* Proteger o método com um lançamento de exceção para:
@@ -23,18 +22,19 @@ public class ProdutoTeste {
 
         //p1.retirarEstoque(30);
 
-        System.out.println(p1);
-        System.out.println();
+        System.out.println(p1 + "\n");
 
+        System.out.println("Qual quantidade você deseja comprar?");
         comprar(p1);
 
         System.out.println("\nQuantidade atual em estoque: " + p1.getQuantidadeEstoque());
 
 
     }
-   static Scanner sc = new Scanner(System.in);
 
-    private static void efetuarBaixaEstoque(Produto produto, int quantidade) throws ProdutoSemEstoqueException {
+    static Scanner sc = new Scanner(System.in);
+
+    private static void efetuarBaixaEstoque(Produto produto, int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException {
         produto.retirarEstoque(quantidade);
         System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n", quantidade, produto.getQuantidadeEstoque());
     }
@@ -60,14 +60,15 @@ public class ProdutoTeste {
                 //Relançando exceção para próximo frame.
                 //throw iae;
 
+
             } catch (ProdutoSemEstoqueException pse) {
                 //Imprime no console o rastro da pilha de erro, muito usado quando está desenvolvendo.
                 //pse.printStackTrace();
                 System.out.printf("Erro na compra: %s. Estoque disponível: %d. Quantidade Solicitada: %d\n",
                         pse.getMessage(), pse.getEstoqueDisponivel(), pse.getEstoqueSolicitado() );
 
-                //Relançando exceção para próximo frame.
-                //throw iae;
+            // Relançando exceção para próximo frame.
+            //throw iae;
 
             } catch (ProdutoInativoException ise) {
                 System.out.println("Produto não ativado: " + ise.getMessage());
@@ -79,7 +80,11 @@ public class ProdutoTeste {
                     break;
                 }
 
+            }  catch (ProdutoException pe) {
+            System.out.println(pe.getClass().getName());
+            System.out.println("Erro na compra: " + pe.getMessage());
             }
+
 
         } while (true);
 
