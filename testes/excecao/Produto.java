@@ -13,12 +13,15 @@ public class Produto {
 
     public void adicionarEstoque(int quantidade) {
         if (quantidade <= 0){
-            throw new IllegalArgumentException("Não pode dar entrada em valores negativos no estoque");
+            throw new IllegalArgumentException("Não pode dar entrada em valores negativos no estoque.");
         }
         this.quantidade += quantidade;
     }
 
-    public void removerEstoque(int quantidade) {
+    public void removerEstoque(int quantidade) throws ProdutoSemEstoqueException {
+        if (this.quantidade - quantidade < 0){
+            throw new ProdutoSemEstoqueException("Retirada do estoque, maior que o estoque disponível.");
+        }
         this.quantidade -= quantidade;
     }
 
