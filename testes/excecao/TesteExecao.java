@@ -7,25 +7,24 @@ public class TesteExecao {
 
 
         produto.adicionarEstoque(10);
+        produto.ativarProduto();
 
+        System.out.println("Quantidade Inicial");
         System.out.println(produto);
         System.out.println();
 
         comprar(produto, 11);
-        System.out.println();
 
+        System.out.println("Quantidade Final");
         System.out.println(produto);
-
-
-
 
     }
 
     public static void comprar(Produto produto, int quantidade) {
         try {
             produto.removerEstoque(quantidade);
-        } catch (ProdutoSemEstoqueException pse) {
-            System.out.println("Erro: " + pse.getMessage());
+        } catch (ProdutoException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 
