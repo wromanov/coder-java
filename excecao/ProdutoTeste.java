@@ -34,11 +34,6 @@ public class ProdutoTeste {
 
     static Scanner sc = new Scanner(System.in);
 
-    private static void efetuarBaixaEstoque(Produto produto, int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException {
-        produto.retirarEstoque(quantidade);
-        System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n", quantidade, produto.getQuantidadeEstoque());
-    }
-
     private static void comprar(Produto produto) {
         do {
             //"Try" = Tente executar o código, "Catch" = caso haja erro capture a exceção, dessa forma o código continua sua execução.
@@ -88,6 +83,11 @@ public class ProdutoTeste {
 
         } while (true);
 
+    }
+
+    private static void efetuarBaixaEstoque(Produto produto, int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException  {
+        produto.retirarEstoque(quantidade);
+        System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n", quantidade, produto.getQuantidadeEstoque());
     }
 
 

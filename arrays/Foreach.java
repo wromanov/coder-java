@@ -16,6 +16,6 @@ public class Foreach {
         for (double nota: notas){
             System.out.print(nota + " ");
         }
-
+        System.out.println("Wll come duk's ");
     }
 }

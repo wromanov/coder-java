@@ -15,17 +15,31 @@ public class TesteExecao {
 
         comprar(produto, 11);
 
-        System.out.println("Quantidade Final");
+        System.out.println("\nQuantidade Final");
         System.out.println(produto);
 
+
+
     }
+
 
     public static void comprar(Produto produto, int quantidade) {
         try {
-            produto.removerEstoque(quantidade);
-        } catch (ProdutoException e) {
-            System.out.println("Erro: " + e.getMessage());
+            baixaEstoque(produto, quantidade);
+        } catch (BaixaEstoqueException e) {
+            System.out.println("Erro na compra: " + e.getCause().getMessage());
+            e.printStackTrace();
         }
     }
+
+    public static void baixaEstoque(Produto produto, int quantidade) throws BaixaEstoqueException {
+        try {
+            produto.removerEstoque(quantidade);
+        } catch (ProdutoException e) {
+            throw new BaixaEstoqueException("Erro ao efetuar baixa no estoque", e);
+        }
+    }
+
+
 
 }
